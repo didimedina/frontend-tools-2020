@@ -1,10 +1,10 @@
-export default (density) => ({
+export default (density, colorMode) => ({
     fonts: {
         body: 'Georgia, Cambria, "Times New Roman", Times, serif',
         heading: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     },
 
-    fontSizes: density === 'low' ? 
+    fontSizes: density === 'compact' ? 
         [
             /* SM */ 10, 12, 14, 16, 20, 24, 28, 32,   
             /* MD */ 10, 12, 14, 16, 20, 24, 28, 32,
@@ -27,13 +27,103 @@ export default (density) => ({
         heading: 1.125,
     },
     colors: {
-        text: '#392a25',
-        muted: '#aaaaaa',
-        background: '#f8f8f8',
-        foreground: '#ffffff',
-        primary: '#92b955',
-        secondary: '#9f8a6d',
-        white: '#FFF'
+        transparent: "transparent",
+        current: "currentColor",
+        black: "#000",
+        white: "#fff",
+
+
+        purple: colorMode === 'dark' ?
+        {
+            900: "#faf5ff",
+            800: "#e9d8fd",
+            700: "#d6bcfa",
+            600: "#b794f4",
+            500: "#9f7aea",
+            400: "#805ad5",
+            300: "#6b46c1",
+            200: "#553c9a",
+            100: "#44337a",
+            50: "#322659",
+        } :
+        {
+            50: "#faf5ff",
+            100: "#e9d8fd",
+            200: "#d6bcfa",
+            300: "#b794f4",
+            400: "#9f7aea",
+            500: "#805ad5",
+            600: "#6b46c1",
+            700: "#553c9a",
+            800: "#44337a",
+            900: "#322659",
+        }, 
+
+        gray: {
+            50: "#F7FAFC",
+            100: "#EDF2F7",
+            200: "#E2E8F0",
+            300: "#CBD5E0",
+            400: "#A0AEC0",
+            500: "#718096",
+            600: "#4A5568",
+            700: "#2D3748",
+            800: "#1A202C",
+            900: "#171923",
+        },
+
+        red: colorMode === 'dark' ? 
+        {
+            900: "#fff5f5",
+            800: "#fed7d7",
+            700: "#feb2b2",
+            600: "#fc8181",
+            500: "#f56565",
+            400: "#e53e3e",
+            300: "#c53030",
+            200: "#9b2c2c",
+            100: "#822727",
+            50: "#63171b",
+        } :
+        {
+            50: "#fff5f5",
+            100: "#fed7d7",
+            200: "#feb2b2",
+            300: "#fc8181",
+            400: "#f56565",
+            500: "#e53e3e",
+            600: "#c53030",
+            700: "#9b2c2c",
+            800: "#822727",
+            900: "#63171b",
+        },
+
+        yellow: {
+            50: "#fffff0",
+            100: "#fefcbf",
+            200: "#faf089",
+            300: "#f6e05e",
+            400: "#ecc94b",
+            500: "#d69e2e",
+            600: "#b7791f",
+            700: "#975a16",
+            800: "#744210",
+            900: "#5F370E",
+        },
+
+        green: {
+            50: "#f0fff4",
+            100: "#c6f6d5",
+            200: "#9ae6b4",
+            300: "#68d391",
+            400: "#48bb78",
+            500: "#38a169",
+            600: "#2f855a",
+            700: "#276749",
+            800: "#22543d",
+            900: "#1C4532",
+        },
+
     },
     radii: 
         [             0, 
@@ -45,7 +135,7 @@ export default (density) => ({
         ],
 
 
-    space: density === 'low' ? 
+    space: density === 'compact' ? 
         [
                       0,
             /* SM */  4,  6,  8, 12, 16, 24, 48,

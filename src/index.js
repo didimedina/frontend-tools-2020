@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {ThemeProvider} from './ThemeProvider'
+import { ColorModeProvider } from '@chakra-ui/core';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ColorModeProvider>
+      <ThemeProvider>
+          <App />
+      </ThemeProvider>
+    </ColorModeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
