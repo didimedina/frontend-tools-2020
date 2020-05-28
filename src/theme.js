@@ -165,6 +165,12 @@ export default (density, colorMode) => ({
 
     breakpoints: ['512px', '896px', '1280px'],
 
+    opacity: {
+        low: 10,
+        mid: 30,
+        high: 60, 
+    }
+
 
 });
 

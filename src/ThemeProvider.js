@@ -8,7 +8,7 @@ const DensityContext = React.createContext()
 export const ThemeProvider = ({children}) => {
     const contextValue = useState('comfy')
     const [density] = contextValue
-    const {colorMode} = useColorMode()
+    const {colorMode} = useColorMode('light')
     const theme = createTheme(density, colorMode)  
 
     return (
