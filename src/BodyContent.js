@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Box, Text, useColorMode, useTheme } from "@chakra-ui/core";
 import { corner, spacer, text, heading } from './theme';
 import { useDensity } from './ThemeProvider'
+import { fadeColor } from './utilities'
 
 const BodyContent = () => {
     const [density, setDensity] = useDensity()
@@ -12,17 +13,15 @@ const BodyContent = () => {
         toggleColorMode
     } = useColorMode('light');
     console.log(colorMode)
-    const theme = useTheme()
-    const color = theme.colors
-    const opacity = theme.opacity
-    const currentColor = color.gray
+    const {colors, opacity} = useTheme()
+    const currentColor = colors.gray
     console.log(opacity.high)
 
-    const fadeColor = (color, opacity) => {
-        return `${color}${opacity}`
-    }
+    // const fadeColor = (color, opacity) => {
+    //     return `${color}${opacity}`
+    // }
 
-    console.log(fadeColor(color.gray[600], 80))
+    console.log(fadeColor(colors.gray[600], 80))
 
     const MotionBox = motion.custom(Box)
     const MotionText = motion.custom(Text)
@@ -36,9 +35,9 @@ const BodyContent = () => {
         maxWidth='720px'
         marginTop={spacer.tight}
         initial={{
-            y: -150,
+            y: -100,
             opacity: 0,
-            scale: 0.8
+            scale: 0.9
         }}
         animate={{
             y: 0,
@@ -74,7 +73,7 @@ const BodyContent = () => {
                 as="span" 
                 ml={spacer.tightest} 
                 display="inline-block" 
-                color={color.red[500]} 
+                color={colors.red[500]} 
                 whileHover={{ color: currentColor['500'], scale: 1.1 }}
                 > 
                 animate and pop.
@@ -101,7 +100,7 @@ const BodyContent = () => {
             rounded={corner.smooth} 
             py={spacer.tighter}
             px={spacer.normal}
-            bg={color.purple[500]}
+            bg={colors.purple[500]}
             color={fadeColor(currentColor[50], opacity.high)}
             border="none"
             onClick={toggleColorMode}

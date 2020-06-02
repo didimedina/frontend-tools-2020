@@ -21,7 +21,7 @@ const LeftPanel = () => {
             backgroundColor={color.gray[100]}
             initial={{
                 x: -260,
-                opacity: 0,
+                opacity: opacity.low,
             }}
             animate={{
                 opacity: 1,
