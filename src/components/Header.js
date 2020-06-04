@@ -23,10 +23,9 @@ const Header = () => {
             <PseudoBox
                 name='colorModeToggleCTA'
                 as="button" 
-                // fontSize={textTest.sm}
                 rounded={corner.smooth} 
-                py={spacer.tight}
-                px={spacer.normal}
+                h={element.md}
+                w={element.md}
                 bg={colors.gray[800]}
                 color={colors.gray[50]}
                 border="none"
@@ -34,25 +33,28 @@ const Header = () => {
                 _focus={{outline: "none"}}
             >
                 {colorMode === "light" ?
-                    <Icon name="moon" size={element.xs}/> 
+                    <Icon name="moon" size={element["xs"]}/> 
                     : 
-                    <Icon name="sun" size={element.xs} />}
+                    <Icon name="sun" size={element["xs"]} />}
             </PseudoBox>
             <PseudoBox
                 name='densityToggleCTA'
                 as="button" 
-                fontSize={textTest.sm}
+                fontSize={textTest.xs}
                 lineHeight='0'
                 rounded={corner.smooth} 
-                py={spacer.tight}
-                px={spacer.normal}
+                h={element.md}
+                w={element.md}
                 bg={colors.gray[300]} 
                 color={colors.gray[800]}
                 border="none"
                 onClick={handleDensity}
                 _focus={{outline: "none"}}
             >
-                {density === "compact" ? "Comfy" : "Compact"}
+              {density === "compact" ? 
+              <Icon name="add" size={element["xs"]}/> /* comfy */ 
+              : 
+              <Icon name="minus" size={element["xs"]}/> /* compact */ }
             </PseudoBox>
          </Grid>
         </Flex>
