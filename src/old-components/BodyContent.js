@@ -1,25 +1,18 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { Box, Text, useColorMode, useTheme } from "@chakra-ui/core";
-import { corner, spacer, text, heading } from './theme';
-import { useDensity } from './ThemeProvider'
-import { fadeColor } from './utilities'
+import { corner, spacer, text, heading } from '../theme';
+import { useDensity } from '../ThemeProvider'
+import { fadeColor } from '../utilities'
 
 const BodyContent = () => {
     const [density, setDensity] = useDensity()
     const handleDensity = () => setDensity(density === 'compact' ? 'comfy' : 'compact')
-    const {
-        colorMode,
-        toggleColorMode
-    } = useColorMode('light');
+    const { colorMode, toggleColorMode } = useColorMode();
     console.log(colorMode)
     const {colors, opacity} = useTheme()
     const currentColor = colors.gray
     console.log(opacity.high)
-
-    // const fadeColor = (color, opacity) => {
-    //     return `${color}${opacity}`
-    // }
 
     console.log(fadeColor(colors.gray[600], 80))
 

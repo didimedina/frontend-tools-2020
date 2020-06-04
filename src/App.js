@@ -1,37 +1,57 @@
 import React from 'react';
+import { Box, Flex, Grid, Text, useTheme } from "@chakra-ui/core";
+import PageShell from './components/PageShell';
+import EmailForm from './components/EmailForm';
+import Header from './components/Header';
 import { motion } from "framer-motion";
-import { Box, Grid, Text, useColorMode, useTheme } from "@chakra-ui/core";
-import { corner, spacer, text, heading } from './theme';
-import { useDensity } from './ThemeProvider'
-import LeftPanel from './LeftPanel';
-import RightPanel from './RightPanel';
-import BodyContent from './BodyContent';
-import EditorShell from './EditorShell';
+import { heading } from './theme';
+// import BodyContent from './old-components/BodyContent'
 
 
 // TODOs
 // Make colors dynamic
 
-function App() {
-  // const [density, setDensity] = useDensity()
-  // const handleDensity = () => setDensity(density === 'compact' ? 'comfy' : 'compact')
-  // const { colorMode, toggleColorMode } = useColorMode('light');
-  // console.log(colorMode)
+const App = () => {
+  const MotionFlex = motion.custom(Flex)
 
   const colors = useTheme().colors
 
-
-
-
   return (
-    <Box backgroundColor={colors.gray[50]}>
-      <EditorShell
-        // templateColumns = "260px 1fr 260px"
-      >
-        <LeftPanel/>
-        <BodyContent/>
-        <RightPanel/>
-      </EditorShell> 
+    <Box backgroundColor={colors.gray[50]} height='100vh'>
+      <PageShell>
+        <Header/>
+        <Grid // Body Container
+          templateColumns="repeat(5, 1fr)"
+          h="100%"
+          // bg={colors.gray[400]}
+          w='80%'
+          maxW='1280px'
+          margin='auto'
+        >
+          <MotionFlex // CTA Content Container 
+            justifyContent="center"
+            flexDirection="column"
+            h='100%'
+            gridColumn='1 / 4'
+            gridRow='1 / 2'
+          >
+            <Text
+              fontSize={heading.h2} color={colors.gray[900]}
+            >
+              Salto is an open source platform that enables SaaS Admins to configure their business tooling using reliable engineering best practices.
+            </Text>
+            <EmailForm/>
+          </MotionFlex>
+          <Box // Photo 
+            h='100%'
+            border="2px solid"
+            borderColor='tomato'
+            gridColumn='3 / 6'
+            gridRow='1 / 2'
+          >
+          </Box>
+        </Grid>
+      </PageShell> 
     </Box>
  
   );
