@@ -4,7 +4,7 @@ import { spacer, text, corner } from '../theme'
 
 
 const EmailForm = () => {
-    const color = useTheme().colors
+    const { colors, fontSizes } = useTheme()
 
     const [ error, setError ] = useState();
     const [ email, setEmail ] = useState('');
@@ -17,17 +17,17 @@ const EmailForm = () => {
         >
             <PseudoBox
                 as='input'
-                border={error ? `2px solid ${color.purple[700]}` : '2px solid transparent'}
+                border={error ? `2px solid ${colors.purple[700]}` : '2px solid transparent'}
                 value={email}
-                color={color.gray[800]}
+                color={colors.gray[800]}
                 onChange={e => setEmail(e.target.value)}
                 placeholder='type here...'
-                fontSize={text.t2}
+                fontSize={fontSizes.sm}
                 py={spacer.normal}
                 px={spacer.tight}
                 borderRadius={corner.smooth}
-                bg={color.gray[200]}
-                _placeholder={{color: color.gray[400]}}
+                bg={colors.gray[200]}
+                _placeholder={{color: colors.gray[400]}}
                 // _hover={{bg: color.gray[300]}}
                 _focus={{outline: "none"}}
             ></PseudoBox>
@@ -39,11 +39,11 @@ const EmailForm = () => {
                 fontSize={text.t2}
                 py={spacer.normal}
                 px={spacer.tight}
-                bg={color.gray[800]}
-                color={color.gray[50]}
+                bg={colors.gray[800]}
+                color={colors.gray[50]}
                 borderRadius={corner.smooth}
                 _focus={{outline: "none"}}
-                _hover={{bg: color.gray[900]}}
+                _hover={{bg: colors.gray[900]}}
                 disabled={email === ''}
                 _disabled={{opacity: '50%'}}
                 onClick={() => {

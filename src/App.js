@@ -3,18 +3,14 @@ import { Box, Flex, Grid, Text, useTheme } from "@chakra-ui/core";
 import PageShell from './components/PageShell';
 import EmailForm from './components/EmailForm';
 import Header from './components/Header';
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { heading } from './theme';
-// import BodyContent from './old-components/BodyContent'
 
-
-// TODOs
-// Make colors dynamic
 
 const App = () => {
-  const MotionFlex = motion.custom(Flex)
+  // const MotionFlex = motion.custom(Flex)
 
-  const colors = useTheme().colors
+  const { colors, fontSizes } = useTheme()
 
   return (
     <Box backgroundColor={colors.gray[50]} height='100vh'>
@@ -28,7 +24,7 @@ const App = () => {
           maxW='1280px'
           margin='auto'
         >
-          <MotionFlex // CTA Content Container 
+          <Flex // CTA Content Container 
             justifyContent="center"
             flexDirection="column"
             h='100%'
@@ -36,12 +32,12 @@ const App = () => {
             gridRow='1 / 2'
           >
             <Text
-              fontSize={heading.h2} color={colors.gray[900]}
+              fontSize={fontSizes["2xl"]} color={colors.gray[900]}
             >
               Salto is an open source platform that enables SaaS Admins to configure their business tooling using reliable engineering best practices.
             </Text>
             <EmailForm/>
-          </MotionFlex>
+          </Flex>
           <Box // Photo 
             h='100%'
             border="2px solid"

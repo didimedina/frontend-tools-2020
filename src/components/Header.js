@@ -1,50 +1,70 @@
 import React from 'react';
-import { Flex, Icon, Grid, PseudoBox, useTheme, useColorMode } from "@chakra-ui/core";
-import { element, textTest, spacer, corner } from '../theme';
+import { motion } from "framer-motion";
+import { Flex, Icon, Grid, PseudoBox, useColorMode, useTheme } from "@chakra-ui/core";
 import { useDensity } from '../ThemeProvider'
 
 const Header = () => {
-    const { colors } = useTheme()
+    
+    const { colors, corners, space, fontSizes, sizes } = useTheme()
+    console.log(corners.pill)
+    console.log(space.tightest)
+  
     const { colorMode, toggleColorMode } = useColorMode();
     const [ density, setDensity ] = useDensity()
     const handleDensity = () => setDensity(density === 'compact' ? 'comfy' : 'compact')
+    const MotionFlex = motion.custom(Flex)
+    
 
     return (
-        <Flex 
+        <MotionFlex 
+            initial={{
+                y: -200,
+                opacity: 0,
+                scale: 0.9
+            }}
+            animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1
+            }}
+            transition={{
+                duration: .8
+            }}
             w="70%" 
             maxW="1024px" 
             m="auto" 
             justifyContent="space-between"
         >
-         <Flex my={spacer.loose} justifyContent="center" flexDirection="column">
-            <Icon name="wink" size={element.sm} color={colors.gray[900]}>Logo</Icon>
+         <Flex my={space.loose} justifyContent="center" flexDirection="column">
+            <Icon name="wink" size={sizes.elements.sm} color={colors.gray[900]}>Logo</Icon>
          </Flex>
-         <Grid templateColumns="auto auto" columnGap={spacer.tightest} alignContent='center'>
+         <Grid templateColumns="auto auto" columnGap={space.tightest} alignContent='center'>
             <PseudoBox
                 name='colorModeToggleCTA'
                 as="button" 
-                rounded={corner.smooth} 
-                h={element.md}
-                w={element.md}
+                rounded={corners.smooth} 
+                h={sizes.elements.md}
+                w={sizes.elements.md}
                 bg={colors.gray[800]}
                 color={colors.gray[50]}
                 border="none"
                 onClick={toggleColorMode}
                 _focus={{outline: "none"}}
             >
+                {console.log(corners.smooth)}
                 {colorMode === "light" ?
-                    <Icon name="moon" size={element["xs"]}/> 
+                    <Icon name="moon" size={sizes.elements['xs']}/> 
                     : 
-                    <Icon name="sun" size={element["xs"]} />}
+                    <Icon name="sun" size={sizes.elements['xs']} />}
             </PseudoBox>
             <PseudoBox
                 name='densityToggleCTA'
                 as="button" 
-                fontSize={textTest.xs}
+                fontSize={fontSizes.xs}
                 lineHeight='0'
-                rounded={corner.smooth} 
-                h={element.md}
-                w={element.md}
+                rounded={corners.smooth} 
+                h={sizes.elements.md}
+                w={sizes.elements.md}
                 bg={colors.gray[300]} 
                 color={colors.gray[800]}
                 border="none"
@@ -52,12 +72,12 @@ const Header = () => {
                 _focus={{outline: "none"}}
             >
               {density === "compact" ? 
-              <Icon name="add" size={element["xs"]}/> /* comfy */ 
+              <Icon name="add" size={sizes.elements["xs"]}/>  
               : 
-              <Icon name="minus" size={element["xs"]}/> /* compact */ }
+              <Icon name="minus" size={sizes.elements["xs"]}/>  }
             </PseudoBox>
          </Grid>
-        </Flex>
+        </MotionFlex>
     )
 }
 
