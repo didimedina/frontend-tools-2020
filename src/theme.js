@@ -1,5 +1,15 @@
 import React from 'react'
 import chakraTheme from '@chakra-ui/core/dist/theme/theme'
+import { useTheme as chakraUseTheme } from "@chakra-ui/core";
+//useTheme<MyTheme>()
+
+// export const useTheme = chakraTheme<MyTheme> 
+
+// export type MyTheme = {
+//     pill: {
+
+//     }
+// }
 
 export const createTheme = (density, colorMode) => ({
     fonts: {
@@ -158,7 +168,7 @@ export const createTheme = (density, colorMode) => ({
         pill: 9999
     },
 
-    sizes: density === 'compact' ? {
+    sizers: density === 'compact' ? {
         elements: {
             tiny:  [   4,   5,   6,   7 ],
             "2xs": [   8,  10,  12,  14 ],
