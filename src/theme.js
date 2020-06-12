@@ -1,6 +1,8 @@
 import React from 'react'
 import chakraTheme from '@chakra-ui/core/dist/theme/theme'
-import { useTheme as chakraUseTheme } from "@chakra-ui/core";
+
+
+// import { useTheme as chakraUseTheme } from "@chakra-ui/core";
 //useTheme<MyTheme>()
 
 // export const useTheme = chakraTheme<MyTheme> 
@@ -168,19 +170,19 @@ export const createTheme = (density, colorMode) => ({
         pill: 9999
     },
 
-    sizers: density === 'compact' ? {
+    sizes: density === 'compact' ? {
         elements: {
-            tiny:  [   4,   5,   6,   7 ],
-            "2xs": [   8,  10,  12,  14 ],
-            xs:    [  12,  14,  16,  20 ],
-            sm:    [  16,  20,  24,  28 ],
-            md:    [  24,  28,  32,  40 ],
-            lg:    [  32,  40,  48,  56 ], 
-            xl:    [  48,  56,  64,  80 ],
-            "2xl": [  64,  80,  96, 112 ],
-            "3xl": [  96, 112, 128, 160 ],
-            "4xl": [ 128, 160, 192, 224 ],
-            "5xl": [ 192, 224, 256, 320 ],
+            tiny:  [   4,   4,   5,   6 ],
+            "2xs": [   8,   8,  10,  12 ],
+            xs:    [  12,  12,  14,  16 ],
+            sm:    [  16,  16,  20,  24 ],
+            md:    [  24,  24,  28,  32 ],
+            lg:    [  32,  32,  40,  48 ], 
+            xl:    [  48,  48,  56,  64 ],
+            "2xl": [  64,  64,  80,  96 ],
+            "3xl": [  96,  96, 112, 128 ],
+            "4xl": [ 128, 128, 160, 192 ],
+            "5xl": [ 192, 192, 224, 256 ],
         },
         containers: {
             tiny:  [   4,   5,   6,   7 ],
@@ -224,7 +226,7 @@ export const createTheme = (density, colorMode) => ({
         }
     },
     
-
+    // this breaks when being renamed to to spacers, nothing else does. how come?
     space: density === 'compact' ? {
         flush:       0,
         tightest: [  4,  4,  5,  6,],
@@ -257,103 +259,12 @@ export const createTheme = (density, colorMode) => ({
     icons: {
         ...chakraTheme.icons,
         wink: {
-            path: <path fill-rule="evenodd" clip-rule="evenodd" d="M19.84 3.37A19.51 19.51 0 0 1 24.45 16c0 4.81-1.73 9.22-4.61 12.63l4 3.37a24.74 24.74 0 0 0 5.84-16c0-6.1-2.2-11.68-5.85-16l-3.99 3.37zm-8.45 6.1a3.92 3.92 0 1 1-7.84 0 3.92 3.92 0 0 1 7.84 0zm-1.31 11.1v5.23c0 1.14-.3 2.24-1.06 3.18a6.8 6.8 0 0 1-2.35 1.77l-2.33 1.17L2 27.24l2.34-1.16c.25-.13.41-.23.51-.3v-5.2h5.23z" fill="currentColor"/>,
-            // If the icon's viewBox is `0 0 24 24`, you can ignore `viewBox`
+            path: <path 
+                fillRule="evenodd" 
+                clipRule="evenodd" 
+                d="M19.84 3.37A19.51 19.51 0 0 1 24.45 16c0 4.81-1.73 9.22-4.61 12.63l4 3.37a24.74 24.74 0 0 0 5.84-16c0-6.1-2.2-11.68-5.85-16l-3.99 3.37zm-8.45 6.1a3.92 3.92 0 1 1-7.84 0 3.92 3.92 0 0 1 7.84 0zm-1.31 11.1v5.23c0 1.14-.3 2.24-1.06 3.18a6.8 6.8 0 0 1-2.35 1.77l-2.33 1.17L2 27.24l2.34-1.16c.25-.13.41-.23.51-.3v-5.2h5.23z"
+                fill="currentColor"/>,
             viewBox: "0 0 32 32",
         }
     }
 });
-
-
-export const spacer = {
-    flush:      0,
-    tightest: [ 1,  8, 15, 22],
-    tighter:  [ 2,  9, 16, 23],
-    tight:    [ 3, 10, 17, 24],
-    normal:   [ 4, 11, 18, 25],
-    loose:    [ 5, 12, 19, 26],
-    looser:   [ 6, 13, 20, 27],
-    loosest:  [ 7, 14, 21, 28]
-}
-
-export const heading = {
-    h1: [ 7, 15, 23, 31],
-    h2: [ 6, 14, 22, 30],
-    h3: [ 5, 13, 21, 29],
-    h4: [ 4, 12, 20, 28],
-}
-
-export const text = {
-    t1: [ 3, 11, 19, 27],
-    t2: [ 2, 10, 18, 26],
-    t3: [ 1,  9, 17, 25],
-    t4: [ 0,  8, 16, 24],
-}
-
-export const corner = {
-    edge:        0,
-    smooth:    [ 1, 4, 7, 10],
-    smoother:  [ 2, 5, 8, 11],
-    smoothest: [ 3, 6, 9, 12],
-    pill:       13,
-}
-
-
-export const sizers = {
-    element: {
-        tiny:  [ 0, 11, 22, 33],
-        "2xs": [ 1, 12, 23, 34],
-        xs:    [ 2, 13, 24, 35],
-        sm:    [ 3, 14, 25, 36],
-        md:    [ 4, 15, 26, 37],
-        lg:    [ 5, 16, 27, 38], 
-        xl:    [ 6, 17, 28, 39],
-        "2xl": [ 7, 18, 29, 40],
-        "3xl": [ 8, 19, 30, 41],
-        "4xl": [ 9, 20, 31, 42],
-        "5xl": [10, 21, 32, 43],
-    },
-    container: {
-        tiny:  [ 0, 11, 22, 33],
-        "2xs": [ 1, 12, 23, 34],
-        xs:    [ 2, 13, 24, 35],
-        sm:    [ 3, 14, 25, 36],
-        md:    [ 4, 15, 26, 37],
-        lg:    [ 5, 16, 27, 38], 
-        xl:    [ 6, 17, 28, 39],
-        "2xl": [ 7, 18, 29, 40],
-        "3xl": [ 8, 19, 30, 41],
-        "4xl": [ 9, 20, 31, 42],
-        "5xl": [10, 21, 32, 43],
-    },
-}
-
-export const textTest = {
-    // Body
-    '2xs': [0, 8,  16, 24],
-    xs:    [1, 9,  17, 25],
-    sm:    [2, 10, 18, 26],
-    md:    [3, 11, 19, 27],
-
-    // Heading
-    lg:    [4, 12, 20, 28],
-    xl:    [5, 13, 21, 29],
-    '2xl': [6, 14, 22, 30],
-    '3xl': [7, 15, 23, 31],
-
-}
-
-export const colors = {
-    gray: {
-        '50':  [0],
-        '100': [1],
-        '200': [2],
-        '300': [3],
-        '400': [4],
-        '500': [5],
-        '600': [6],
-        '700': [7],
-        '800': [8],
-        '900': [9],
-    }
-} 

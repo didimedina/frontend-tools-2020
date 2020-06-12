@@ -3,12 +3,9 @@ import { Box, Flex, Grid, Text, useTheme } from "@chakra-ui/core";
 import PageShell from './components/PageShell';
 import EmailForm from './components/EmailForm';
 import Header from './components/Header';
-// import { motion } from "framer-motion";
-import { heading } from './theme';
 
 
 const App = () => {
-  // const MotionFlex = motion.custom(Flex)
 
   const { colors, fontSizes } = useTheme()
 

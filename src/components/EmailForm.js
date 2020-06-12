@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Grid, PseudoBox, useTheme } from "@chakra-ui/core";
-import { spacer, text, corner } from '../theme'
-
 
 const EmailForm = () => {
-    const { colors, fontSizes } = useTheme()
+
+    const { colors, corners, space, fontSizes } = useTheme()
 
     const [ error, setError ] = useState();
     const [ email, setEmail ] = useState('');
@@ -12,7 +11,7 @@ const EmailForm = () => {
     return (
         <Grid
          templateColumns="auto auto"
-         columnGap={spacer.tighter}
+         columnGap={space.tighter}
          w='60%'
         >
             <PseudoBox
@@ -23,9 +22,9 @@ const EmailForm = () => {
                 onChange={e => setEmail(e.target.value)}
                 placeholder='type here...'
                 fontSize={fontSizes.sm}
-                py={spacer.normal}
-                px={spacer.tight}
-                borderRadius={corner.smooth}
+                py={space.normal}
+                px={space.tight}
+                borderRadius={corners.smooth}
                 bg={colors.gray[200]}
                 _placeholder={{color: colors.gray[400]}}
                 // _hover={{bg: color.gray[300]}}
@@ -36,12 +35,12 @@ const EmailForm = () => {
             <PseudoBox
                 as="button"
                 border="none"
-                fontSize={text.t2}
-                py={spacer.normal}
-                px={spacer.tight}
+                fontSize={fontSizes.md}
+                py={space.normal}
+                px={space.tight}
                 bg={colors.gray[800]}
                 color={colors.gray[50]}
-                borderRadius={corner.smooth}
+                borderRadius={corners.smooth}
                 _focus={{outline: "none"}}
                 _hover={{bg: colors.gray[900]}}
                 disabled={email === ''}
