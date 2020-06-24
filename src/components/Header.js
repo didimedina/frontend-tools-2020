@@ -1,16 +1,11 @@
 import React from 'react';
-import { Flex, Icon, Grid, PseudoBox, useColorMode, useTheme } from "@chakra-ui/core";
-import { useDensity } from '../ThemeProvider'
+import { Flex, Icon, PseudoBox, useColorMode } from "@chakra-ui/core";
+import { color, corner, space, size} from '../theme';
 
 const Header = () => {
-    
-    const { colors, corners, space, fontSizes, sizes } = useTheme()
   
     const { colorMode, toggleColorMode } = useColorMode();
-    const [ density, setDensity ] = useDensity()
-    const handleDensity = () => setDensity(density === 'compact' ? 'comfy' : 'compact')
     
-
     return (
         <Flex
             w="70%" 
@@ -18,48 +13,26 @@ const Header = () => {
             m="auto" 
             justifyContent="space-between"
         >
-         <Flex my={space.loose} justifyContent="center" flexDirection="column">
-            <Icon name="wink" size={sizes.elements.sm} color={colors.gray[900]}>Logo</Icon>
-         </Flex>
-         <Grid templateColumns="auto auto" columnGap={space.tightest} alignContent='center'>
+            <Flex my={space.loose} justifyContent="center" flexDirection="column">
+                <Icon name="wink" size={size.sm} color={color.grey[900]}>Logo</Icon>
+            </Flex>
             <PseudoBox
                 name='colorModeToggleCTA'
                 as="button" 
-                rounded={corners.smooth} 
-                h={sizes.elements.md}
-                w={sizes.elements.md}
-                bg={colors.gray[800]}
-                color={colors.gray[50]}
+                alignSelf='center'
+                rounded={corner.smooth} 
+                size={size.elements.xl}
+                bg={color.grey[800]}
+                color={color.grey[50]}
                 border="none"
                 onClick={toggleColorMode}
-                _focus={{outline: "none"}}
+                _focus={{ outline: 'none' }}
             >
-                {console.log(corners.smooth)}
                 {colorMode === "light" ?
-                    <Icon name="moon" size={sizes.elements['xs']}/> 
+                    <Icon name="moon" size={size.elements.sm}/> 
                     : 
-                    <Icon name="sun" size={sizes.elements['xs']} />}
+                    <Icon name="sun" size={size.elements.sm} />}
             </PseudoBox>
-            <PseudoBox
-                name='densityToggleCTA'
-                as="button" 
-                fontSize={fontSizes.xs}
-                lineHeight='0'
-                rounded={corners.smooth} 
-                h={sizes.elements.md}
-                w={sizes.elements.md}
-                bg={colors.gray[300]} 
-                color={colors.gray[800]}
-                border="none"
-                onClick={handleDensity}
-                _focus={{outline: "none"}}
-            >
-              {density === "compact" ? 
-              <Icon name="add" size={sizes.elements["xs"]}/>  
-              : 
-              <Icon name="minus" size={sizes.elements["xs"]}/>  }
-            </PseudoBox>
-         </Grid>
         </Flex>
     )
 }
