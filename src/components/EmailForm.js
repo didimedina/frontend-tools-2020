@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, PseudoBox } from "@chakra-ui/core";
+import { Grid, Box } from "@chakra-ui/core";
 import { color, corner, fontSize, space} from '../theme';
 
 const EmailForm = () => {
@@ -15,7 +15,7 @@ const EmailForm = () => {
          columnGap={space.tighter}
          w='60%'
         >
-            <PseudoBox
+            <Box
                 as='input'
                 border={error ? `2px solid ${color.purple[700]}` : '2px solid transparent'}
                 value={email}
@@ -30,10 +30,10 @@ const EmailForm = () => {
                 _placeholder={{color: color.grey[400]}}
                 // _hover={{bg: color.gray[300]}}
                 _focus={{outline: "none"}}
-            ></PseudoBox>
+            ></Box>
             {/* {error && <PseudoBox color="red" >{error}</PseudoBox>}
             {!error && <PseudoBox color="red" >Oh, no errors!</PseudoBox>} */}
-            <PseudoBox
+            <Box
                 as="button"
                 border="none"
                 fontSize={fontSize.md}
@@ -50,7 +50,7 @@ const EmailForm = () => {
                     if (!email.includes('@') ) {setError('error')}
                     else { setError() }
                 }}
-            >Submit</PseudoBox>
+            >Submit</Box>
         </Grid>
 
 

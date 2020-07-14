@@ -1,5 +1,5 @@
 import React from 'react'
-import chakraTheme from '@chakra-ui/core/dist/theme/theme'
+import chakraTheme from '@chakra-ui/theme'
 
 export const fontSize = {
     text: {
