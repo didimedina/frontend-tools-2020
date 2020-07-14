@@ -61,7 +61,7 @@ const App = () => {
             <Box //xl button (marketing only)
               as="button"
               h={size.elements["3xl"]} 
-              px={space.loose}
+              px={space.looser}
               border="none"
               fontSize={fontSize.text.md}
               bg={color.purple[600]}
