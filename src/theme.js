@@ -30,7 +30,7 @@ export const corner = {
 }
 
 export const size = {
-    elements: {
+    element: {
         tiny:  [   6,   6,   7,   8 ],
         '2xs': [  10,  10,  12,  14 ],
         xs:    [  12,  12,  14,  16 ],
@@ -44,7 +44,7 @@ export const size = {
         "5xl": [  64, 112, 128, 160 ],
         "6xl": [  96, 160, 192, 224 ] 
     },
-    containers: {
+    container: {
         sm: [224, 256, 320, 384],
         md: [320, 384, 448, 512],
         lg: [448, 512, 640, 768],

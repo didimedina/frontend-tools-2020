@@ -6,7 +6,7 @@ const Container = (props) => {
     const {children} = props
 
     return (
-        <Box w={'100%'} maxW={size.containers.lg} bg={color.base.transparent} m={space.loose}>
+        <Box w={'100%'} maxW={size.container.lg} bg={color.base.transparent} m={space.loose}>
             {children}
         </Box>
     )
