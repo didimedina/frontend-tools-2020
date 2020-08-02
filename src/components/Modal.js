@@ -8,7 +8,7 @@ const Modal = () => {
         <Flex
             w='100vw'
             h='100vh'
-            bg={`${color.grey[700]}80`}
+            bg={`${color.grey[500]}80`}
             position='absolute'
             justifyContent='center'
             alignItems='center'

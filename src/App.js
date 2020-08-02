@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Box bg={color.grey[200]} w='100vw' h='100vh' position='relative'>
       {/* <Modal/> */}
-      <PageModal/>
+      {/* <PageModal/> */}
       <Grid 
         w='100%'
         h='100%'
