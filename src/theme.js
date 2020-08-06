@@ -1,6 +1,11 @@
 import React from 'react'
 import chakraTheme from '@chakra-ui/theme'
 
+export const fonts = {
+    body: 'Eina',
+    code: 'JetBrains'
+}
+
 export const fontSize = {
     text: {
         '2xs': [10, 10, 12, 14],
@@ -17,8 +22,8 @@ export const fontSize = {
 }
 
 export const fontWeight = {
-    body: 400,
-    heading: 700,
+    regular: 400,
+    bold: 700,
 }
 
 export const corner = {
