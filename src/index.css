@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'Eina';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../src/assets/fonts/eina/Eina03-Regular.otf');
-}
-
-@font-face {
   font-family: 'JetBrains';
   font-style: normal;
   font-weight: 400;
   src: url('../src/assets/fonts/jetbrains/JetBrainsMono-Regular.woff');
 }
 
+@font-face {
+  font-family: 'Galano';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../src/assets/fonts/galano/galano-medium.otf');
+}
+
 body {
   margin: 0;
-  font-family: 'Eina', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Galano', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

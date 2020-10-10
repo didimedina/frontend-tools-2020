@@ -2,24 +2,45 @@ import React from 'react'
 import chakraTheme from '@chakra-ui/theme'
 
 export const fonts = {
-    body: 'Eina',
+    body: 'Galano',
     code: 'JetBrains'
 }
 
 export const fontSize = {
     text: {
-        '2xs': [10, 10, 12, 14],
-        xs:    [12, 12, 14, 16],
-        sm:    [14, 14, 16, 20],
-        md:    [16, 16, 20, 24]
+        '2xs': [10, 10, 12],
+        xs:    [12, 12, 14],
+        sm:    [14, 14, 16],
+        md:    [16, 16, 20]
     },
     heading: {
-        lg:    [20, 20, 24, 28],
-        xl:    [24, 28, 32, 40],
-        '2xl': [28, 40, 48, 56],
-        '3xl': [32, 56, 64, 80],
+        lg:    [20, 20, 24],
+        xl:    [24, 28, 32],
+        '2xl': [28, 40, 48],
+        '3xl': [32, 56, 64],
     }
 }
+
+export const lineHeight = {
+    none: 1,
+    body: 1.5,
+    heading: 1.125,
+}
+
+// export const fontSize = {
+//     text: {
+//         '2xs': [10, 10, 12, 14],
+//         xs:    [12, 12, 14, 16],
+//         sm:    [14, 14, 16, 20],
+//         md:    [16, 16, 20, 24]
+//     },
+//     heading: {
+//         lg:    [20, 20, 24, 28],
+//         xl:    [24, 28, 32, 40],
+//         '2xl': [28, 40, 48, 56],
+//         '3xl': [32, 56, 64, 80],
+//     }
+// }
 
 export const fontWeight = {
     regular: 400,
@@ -50,6 +71,7 @@ export const size = {
         "6xl": [  96, 160, 192, 224 ] 
     },
     container: {
+        xs: [],
         sm: [224, 256, 320, 384],
         md: [320, 384, 448, 512],
         lg: [448, 512, 640, 768],

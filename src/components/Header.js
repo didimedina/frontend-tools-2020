@@ -15,7 +15,11 @@ const Header = () => {
                 <Box h={size.element.md} fontSize={fontSize.text.sm}>Salto</Box>
                 <Box bg={color.grey[100]} w='120px' h={size.element.lg} borderRadius={corner.pill}></Box>
             </Grid>
-            <Box w={size.element.lg} h={size.element.lg} borderRadius={corner.pill} bg={color.grey[400]}></Box>
+            <Grid gridAutoFlow='column' gridGap={space.tight} alignItems='stretch'>
+                <Box bg={color.grey[100]} w='120px' py={space.tightest} px={space.tight} borderRadius={corner.pill}>Didi Medina</Box>
+                <Box w={size.element.lg} minH={size.element.lg} borderRadius={corner.pill} bg={color.grey[400]}></Box>
+            </Grid>
+            
         </Flex>
     );
 };

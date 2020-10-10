@@ -18,7 +18,7 @@ const Modal = () => {
                 w='100%'
                 maxW={size.container.lg}
                 minH='60%'
-                bg={color.base.white}s
+                bg={color.base.white}
                 borderRadius={corner.smoother}
                 templateRows='min-content 1fr min-content'
                 templateAreas={`"header" "body" "footer"`}
