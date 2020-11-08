@@ -8,16 +8,16 @@ export const fonts = {
 
 export const fontSize = {
     text: {
-        '2xs': [10, 10, 12],
-        xs:    [12, 12, 14],
-        sm:    [14, 14, 16],
-        md:    [16, 16, 20]
+        '2xs': [10, null, 12, null],
+        xs:    [12, null, 14, null],
+        sm:    [14, null, 16, null],
+        md:    [16, null, 20, null]
     },
     heading: {
-        lg:    [20, 20, 24],
-        xl:    [24, 28, 32],
-        '2xl': [28, 40, 48],
-        '3xl': [32, 56, 64],
+        lg:    [20, null, 24, null],
+        xl:    [24, null, 32, null],
+        '2xl': [28, null, 48, null],
+        '3xl': [32, null, 64, null],
     }
 }
 
